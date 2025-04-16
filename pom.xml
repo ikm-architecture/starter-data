@@ -81,6 +81,15 @@
 					<artifactId>build-helper-maven-plugin</artifactId>
 					<version>${build-helper-maven-plugin.version}</version>
 				</plugin>
+				<plugin>
+					<groupId>dev.ikm</groupId>
+					<artifactId>gitflow-maven-plugin</artifactId>
+					<configuration>
+						<commitMessages>
+							<releaseFinishMessage>Set new development version</releaseFinishMessage>
+						</commitMessages>
+					</configuration>
+				</plugin>
 			</plugins>
 		</pluginManagement>
 
