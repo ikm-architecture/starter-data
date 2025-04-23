@@ -44,6 +44,8 @@
 	</scm>
 
 	<properties>
+		<maven.build.timestamp.format>yyyyMMdd</maven.build.timestamp.format>
+		<revision>${maven.build.timestamp}-SNAPSHOT</revision>
 		<!-- Tinkar Starter Data Properties -->
 		<tinkar-starter-data.groupId>dev.ikm.data.tinkar</tinkar-starter-data.groupId>
 		<tinkar-starter-data.artifactId>tinkar-starter-data</tinkar-starter-data.artifactId>
@@ -56,8 +58,6 @@
 		<!-- Properties for Ease of Use -->
 		<datastore.path>${project.build.directory}/${tinkar-starter-data.artifactId}-${tinkar-starter-data.version}-${tinkar-starter-data.classifier}</datastore.path>
 		<data-artifact.prefix>${project.artifactId}-${project.version}</data-artifact.prefix>
-		<maven.build.timestamp.format>yyyyMMdd</maven.build.timestamp.format>
-		<revision>${maven.build.timestamp}-SNAPSHOT</revision>
 	</properties>
 
 	<build>
@@ -80,6 +80,15 @@
 					<groupId>org.codehaus.mojo</groupId>
 					<artifactId>build-helper-maven-plugin</artifactId>
 					<version>${build-helper-maven-plugin.version}</version>
+				</plugin>
+				<plugin>
+					<groupId>dev.ikm</groupId>
+					<artifactId>gitflow-maven-plugin</artifactId>
+					<configuration>
+						<commitMessages>
+							<releaseFinishMessage>Set new development version</releaseFinishMessage>
+						</commitMessages>
+					</configuration>
 				</plugin>
 			</plugins>
 		</pluginManagement>
