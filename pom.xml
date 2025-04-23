@@ -243,6 +243,7 @@
 											<directory>src/main/resources/</directory>
 											<includes>
 												<include>**pb.zip</include>
+												<include>**ike-cs.zip</include>
 											</includes>
 										</fileset>
 									</filesets>
